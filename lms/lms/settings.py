@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core'
 ]
 
 MIDDLEWARE = [
@@ -75,7 +76,11 @@ WSGI_APPLICATION = 'lms.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': BASE_DIR / 'sqlite3',
+        'NAME':'django_workshop_lms',
+        'HOST':'localhost',
+        'USER':'root',
+        'PASSWORD': '12345@',
+        'PORT': 3306
     }
 }
 
