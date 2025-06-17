@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock  %}</title>
+    {% comment %} bootstrap css link {% endcomment %}
+    {% block custom_css %}{% endblock  %}
+</head>
+<body>
+    {% comment %} navigation {% endcomment %}
+    <main class="container">
+        {% block content %}
+        
+        {% endblock  %}
+    </main>
+
+    {% comment %} footer {% endcomment %}
+
+    {% comment %} custom js {% endcomment %}
+    {% block custom_js %}
+        
+    {% endblock  %}
+</body>
+</html>

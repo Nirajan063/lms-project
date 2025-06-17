@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Teacher | List {% endblock  %}
+{% block content  %}
+<section>
+    <h1>Teacher List</h1>
+    <p><a href="{%url 'teacher.create'%}" class=" btn btn-sm btn-primary">Add New Teacher</a></p>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>S.NO.</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ teacher.full_name }}</td>
+                <td>{{ teacher.email }}</td>
+                <td>{{ teacher.phone }}</td>
+                <td><a href="#">View</a></td>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+                {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock  %}
