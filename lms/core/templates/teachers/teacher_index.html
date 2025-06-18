@@ -11,6 +11,7 @@
                 <th>Full Name</th>
                 <th>Email</th>
                 <th>Phone</th>
+                <th>action</th>
             </tr>
         </thead>
         <tbody>
@@ -19,10 +20,13 @@
                 <td>{{ forloop.counter }}</td>
                 <td>{{ teacher.full_name }}</td>
                 <td>{{ teacher.email }}</td>
-                <td>{{ teacher.phone }}</td>
-                <td><a href="#">View</a></td>
-                <td><a href="#">Edit</a></td>
-                <td><a href="#">Delete</a></td>
+                <td>{{ teacher.phone_no }}</td>
+                <td>{{ teacher.action }}</td>
+                <td><a href="{% url 'teacher.detail' teacher.id %}"><i class="fa-solid fa-eye"></i></a></td>
+                <td><a href="{% url 'teacher.edit' teacher.id %}"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                <td><a href="{% url 'teacher.delete' teacher.id %}"><i class="fa-solid fa-trash"></i></a></td>
+            </tr>
+            {% empty %}
                 {% endfor %}
         </tbody>
     </table>
