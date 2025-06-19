@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}profile{% endblock  %}
+
+{% block content %}
+<section class="container">
+    {% if user.is_authenticated %}
+        <h1>Welcome {{user.username}}</h1>
+        <p>Name: {{user.first_name}} {{user.last_name}}</p>
+        <p>Email: {{user.email}}</p>
+    {%else %}
+        <h1>The user is not available..</h1>
+    {% endif %}
+</section>
+{% endblock  %}
